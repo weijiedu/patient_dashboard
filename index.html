@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="patientApp">
+<head>
+      <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Patient Dashboard</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.6/ui-bootstrap-tpls.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body ng-controller="PatientController">
+  <div class="dashboard-container">
+    <!-- Header -->
+    <header class="dashboard-header">
+      <h1>Hello, Dr. Noori!</h1>
+    </header>
+
+    <div class="search-title-section">
+      <i class="fas fa-search search-icon"></i>
+      <span class="search-title">Search your patients</span>
+    </div>
+
+    <!-- Search Section -->
+    <div class="search-section">
+      <div class="search-card">
+
+
+        <!-- Search Tabs -->
+        <div class="search-tabs">
+          <button class="tab-button" ng-class="{'active': activeTab === 'basic'}" ng-click="setActiveTab('basic')">Basic</button>
+          <button class="tab-button" ng-class="{'active': activeTab === 'advanced'}" ng-click="setActiveTab('advanced')">Advanced</button>
+        </div>
+
+        <!-- Patient Info Section -->
+        <div class="patient-info-section" ng-show="activeTab === 'basic'">
+          <h3>Patient Info</h3>
+          <div class="input-row">
+            <div class="input-group">
+              <label>First Name</label>
+              <input type="text" ng-model="searchForm.firstName" placeholder="Miguel">
+            </div>
+            <div class="input-group">
+              <label>Last Name</label>
+              <input type="text" ng-model="searchForm.lastName" placeholder="Herrera">
+            </div>
+            <div class="input-group">
+              <label>Date of Birth</label>
+              <input type="date" ng-model="searchForm.dobDate" ng-change="formatDate('dob')" style="width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;">
+            </div>
+          </div>
+        </div>
+
+        <!-- Appointment Range Section -->
+        <div class="appointment-range-section" ng-show="activeTab === 'basic'">
+          <h3>Appointment Range</h3>
+          <div class="input-row">
+            <div class="input-group">
+              <label>Start Date</label>
+              <input type="date" ng-model="searchForm.startDateDate" ng-change="formatDate('startDate')" style="width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;">
+            </div>
+            <div class="input-group">
+              <label>End Date</label>
+              <input type="date" ng-model="searchForm.endDateDate" ng-change="formatDate('endDate')" style="width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;">
+            </div>
+          </div>
+        </div>
+
+        <!-- Advanced Search Section -->
+        <div class="advanced-search-section" ng-show="activeTab === 'advanced'">
+          <h3>Advanced Patient Search</h3>
+          
+          <!-- Personal Information -->
+          <div class="search-section-group">
+            <h4>Personal Information</h4>
+            <div class="input-row">
+              <div class="input-group">
+                <label>First Name</label>
+                <input type="text" ng-model="advancedSearch.firstName" placeholder="First name">
+              </div>
+              <div class="input-group">
+                <label>Last Name</label>
+                <input type="text" ng-model="advancedSearch.lastName" placeholder="Last name">
+              </div>
+              <div class="input-group">
+                <label>Date of Birth</label>
+                <input type="date" ng-model="advancedSearch.dobDate" ng-change="formatAdvancedDate('dob')" style="width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;">
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="input-group">
+                <label>Sex</label>
+                <select ng-model="advancedSearch.sex" style="width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;">
+                  <option value="">Any</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+              </div>
+              <div class="input-group">
+                <label>Residence</label>
+                <input type="text" ng-model="advancedSearch.residence" placeholder="City, State">
+              </div>
+              <div class="input-group">
+                <label>MRN</label>
+                <input type="text" ng-model="advancedSearch.mrn" placeholder="Medical Record Number">
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="search-section-group">
+            <h4>Contact Information</h4>
+            <div class="input-row">
+              <div class="input-group">
+                <label>Phone Number</label>
+                <input type="text" ng-model="advancedSearch.phone" placeholder="Phone number">
+              </div>
+              <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" ng-model="advancedSearch.email" placeholder="Email address">
+              </div>
+              <div class="input-group">
+                <label>ID Number</label>
+                <input type="text" ng-model="advancedSearch.idNumber" placeholder="ID Number">
+              </div>
+            </div>
+          </div>
+
+          <!-- Medical Information -->
+          <div class="search-section-group">
+            <h4>Medical Information</h4>
+            <div class="input-row">
+              <div class="input-group">
+                <label>Hospital</label>
+                <input type="text" ng-model="advancedSearch.hospital" placeholder="Hospital name">
+              </div>
+              <div class="input-group">
+                <label>Department</label>
+                <input type="text" ng-model="advancedSearch.department" placeholder="Department">
+              </div>
+              <div class="input-group">
+                <label>Physician</label>
+                <input type="text" ng-model="advancedSearch.physician" placeholder="Physician name">
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="input-group">
+                <label>Conditions</label>
+                <input type="text" ng-model="advancedSearch.conditions" placeholder="Medical conditions">
+              </div>
+              <div class="input-group">
+                <label>Next Appointment</label>
+                <input type="date" ng-model="advancedSearch.appointmentDate" ng-change="formatAdvancedDate('appointment')" style="width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Search Button -->
+        <div class="search-button-container">
+          <button class="search-button" ng-click="performSearch()">Search</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Patient List Section -->
+    <div class="patient-list-section">
+      <!-- Navigation Tabs -->
+      <div class="list-tabs">
+        <button class="list-tab" ng-class="{'active': activeListTab === 'today'}" ng-click="setActiveListTab('today')">
+          <i class="fas fa-calendar"></i>
+          Today's patients
+        </button>
+        <button class="list-tab" ng-class="{'active': activeListTab === 'search'}" ng-click="setActiveListTab('search')">
+          <i class="fas fa-list"></i>
+          Search results
+        </button>
+      </div>
+
+      <!-- Patient Cards -->
+      <div class="patient-cards">
+        <div class="patient-card" ng-repeat="patient in getCurrentPatients()">
+          <div class="patient-header">
+            <div class="patient-avatar">
+              <div class="avatar-placeholder">{{patient.name.charAt(0)}}</div>
+            </div>
+            <div class="patient-name">
+              <h3>{{patient.name}}</h3>
+            </div>
+            <div class="next-appointment">
+              <span>Next Appointment</span>
+              <div class="appointment-time">
+                <span>{{patient.nextAppointment}}</span>
+                <i class="fas fa-chevron-right"></i>
+              </div>
+            </div>
+          </div>
+          
+          <div class="patient-details">
+            <div class="details-column">
+              <div class="detail-item">
+                <span class="label">DOB</span>
+                <span class="value">{{patient.dob}}</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Sex</span>
+                <span class="value">{{patient.sex}}</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Residence</span>
+                <span class="value">{{patient.residence}}</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">MRN</span>
+                <span class="value">{{patient.mrn}}</span>
+              </div>
+            </div>
+            
+            <div class="details-column">
+              <div class="detail-item">
+                <span class="label">ID Number</span>
+                <span class="value">{{patient.idNumber}}</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Last 4 Digits of SSN</span>
+                <span class="value">{{patient.ssn}}</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Phone Number</span>
+                <span class="value">{{patient.phone}}</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Email Address</span>
+                <span class="value">{{patient.email}}</span>
+              </div>
+            </div>
+            
+            <div class="details-column">
+              <div class="detail-item">
+                <span class="label">Hospital</span>
+                <span class="value">{{patient.hospital}}</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Dept.</span>
+                <span class="value">{{patient.department}}</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Physician</span>
+                <span class="value">{{patient.physician}}</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Conditions</span>
+                <span class="value">{{patient.conditions}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
