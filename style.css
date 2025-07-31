@@ -220,6 +220,23 @@ body {
   background: #357ABD;
 }
 
+.clear-button {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 10px;
+}
+
+.clear-button:hover {
+  background: #5a6268;
+}
+
 /* Patient List Section */
 .patient-list-section {
   background: white;

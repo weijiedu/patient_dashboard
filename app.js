@@ -364,7 +364,9 @@ angular.module('patientApp', ['ui.bootstrap'])
     ];
 
     // Initialize separate data for each tab
-    $scope.todayPatients = $scope.patients;
+    $scope.todayPatients = $scope.patients.filter(function(patient) {
+      return patient.nextAppointment.includes('Today');
+    });
     $scope.searchResults = [];
 
     // Set active tab
@@ -384,6 +386,50 @@ angular.module('patientApp', ['ui.bootstrap'])
       } else {
         return $scope.searchResults;
       }
+    };
+
+    // Refresh today's patients list
+    $scope.refreshTodayPatients = function() {
+      $scope.todayPatients = $scope.patients.filter(function(patient) {
+        return patient.nextAppointment.includes('Today');
+      });
+    };
+
+    // Clear search form and reset filters
+    $scope.clearSearch = function() {
+      if ($scope.activeTab === 'basic') {
+        $scope.searchForm = {
+          firstName: '',
+          lastName: '',
+          dob: '',
+          dobDate: '',
+          startDate: '',
+          startDateDate: '',
+          endDate: '',
+          endDateDate: ''
+        };
+      } else {
+        $scope.advancedSearch = {
+          firstName: '',
+          lastName: '',
+          dob: '',
+          dobDate: '',
+          sex: '',
+          residence: '',
+          mrn: '',
+          phone: '',
+          email: '',
+          idNumber: '',
+          hospital: '',
+          department: '',
+          physician: '',
+          conditions: '',
+          appointment: '',
+          appointmentDate: ''
+        };
+      }
+      $scope.searchResults = [];
+      $scope.activeListTab = 'today';
     };
 
     // Filter patients based on search query
@@ -435,12 +481,16 @@ angular.module('patientApp', ['ui.bootstrap'])
             if (appointmentDate) {
               if ($scope.searchForm.startDate) {
                 var startDate = new Date($scope.searchForm.startDate);
+                // Set start date to beginning of day (00:00:00)
+                startDate.setHours(0, 0, 0, 0);
                 if (appointmentDate < startDate) {
                   matches = false;
                 }
               }
               if ($scope.searchForm.endDate) {
                 var endDate = new Date($scope.searchForm.endDate);
+                // Set end date to end of day (23:59:59)
+                endDate.setHours(23, 59, 59, 999);
                 if (appointmentDate > endDate) {
                   matches = false;
                 }
