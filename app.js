@@ -136,6 +136,230 @@ angular.module('patientApp', ['ui.bootstrap'])
         physician: 'Dr. Beth Smith',
         conditions: 'CHF',
         nextAppointment: 'Today 3:30 pm'
+      },
+      {
+        name: 'Maria Rodriguez',
+        dob: '08/22/1965',
+        sex: 'Female',
+        residence: 'Cambridge, MA',
+        mrn: 'YTK12345679',
+        idNumber: 'NHL12345679',
+        ssn: '6666',
+        phone: '(666)-666-6666',
+        email: 'mrodriguez@email.com',
+        hospital: 'Massachusetts Medical Group',
+        department: 'Department of Cardiology',
+        physician: 'Dr. Beth Smith',
+        conditions: 'Hypertension, Diabetes (Type I)',
+        nextAppointment: 'Today 4:00 pm'
+      },
+      {
+        name: 'James Wilson',
+        dob: '12/05/1948',
+        sex: 'Male',
+        residence: 'Somerville, MA',
+        mrn: 'YTK12345680',
+        idNumber: 'NHL12345680',
+        ssn: '7777',
+        phone: '(777)-777-7777',
+        email: 'jwilson48@email.com',
+        hospital: 'Massachusetts Medical Group',
+        department: 'Department of Cardiology',
+        physician: 'Dr. Beth Smith',
+        conditions: 'COPD, Asthma',
+        nextAppointment: 'Today 5:15 pm'
+      },
+      {
+        name: 'Sarah Chen',
+        dob: '05/18/1972',
+        sex: 'Female',
+        residence: 'Brookline, MA',
+        mrn: 'YTK12345681',
+        idNumber: 'NHL12345681',
+        ssn: '8888',
+        phone: '(888)-888-8888',
+        email: 'schen72@email.com',
+        hospital: 'Massachusetts Medical Group',
+        department: 'Department of Cardiology',
+        physician: 'Dr. Beth Smith',
+        conditions: 'CHF, Hypertension',
+        nextAppointment: 'Tomorrow 8:00 am'
+      },
+      {
+        name: 'Robert Thompson',
+        dob: '09/30/1955',
+        sex: 'Male',
+        residence: 'Newton, MA',
+        mrn: 'YTK12345682',
+        idNumber: 'NHL12345682',
+        ssn: '9999',
+        phone: '(999)-999-9999',
+        email: 'rthompson55@email.com',
+        hospital: 'Massachusetts Medical Group',
+        department: 'Department of Cardiology',
+        physician: 'Dr. Beth Smith',
+        conditions: 'Diabetes (Type II), Hypertension',
+        nextAppointment: 'Tomorrow 9:30 am'
+      },
+      {
+        name: 'Lisa Martinez',
+        dob: '11/14/1980',
+        sex: 'Female',
+        residence: 'Medford, MA',
+        mrn: 'YTK12345683',
+        idNumber: 'NHL12345683',
+        ssn: '1010',
+        phone: '(101)-010-1010',
+        email: 'lmartinez80@email.com',
+        hospital: 'Massachusetts Medical Group',
+        department: 'Department of Cardiology',
+        physician: 'Dr. Beth Smith',
+        conditions: 'COPD',
+        nextAppointment: 'Tomorrow 11:45 am'
+      },
+      {
+        name: 'David Kim',
+        dob: '02/28/1968',
+        sex: 'Male',
+        residence: 'Arlington, MA',
+        mrn: 'YTK12345684',
+        idNumber: 'NHL12345684',
+        ssn: '1111',
+        phone: '(111)-111-1111',
+        email: 'dkim68@email.com',
+        hospital: 'Massachusetts Medical Group',
+        department: 'Department of Cardiology',
+        physician: 'Dr. Beth Smith',
+        conditions: 'CHF, Diabetes (Type II)',
+        nextAppointment: 'Tomorrow 2:00 pm'
+      },
+      {
+        name: 'Jennifer Davis',
+        dob: '07/07/1975',
+        sex: 'Female',
+        residence: 'Watertown, MA',
+        mrn: 'YTK12345685',
+        idNumber: 'NHL12345685',
+        ssn: '1212',
+        phone: '(121)-212-1212',
+        email: 'jdavis75@email.com',
+        hospital: 'Massachusetts Medical Group',
+        department: 'Department of Cardiology',
+        physician: 'Dr. Beth Smith',
+        conditions: 'Hypertension, Asthma',
+        nextAppointment: 'Tomorrow 3:30 pm'
+      },
+      {
+        name: 'Michael Brown',
+        dob: '04/15/1950',
+        sex: 'Male',
+        residence: 'Belmont, MA',
+        mrn: 'YTK12345686',
+        idNumber: 'NHL12345686',
+        ssn: '1313',
+        phone: '(131)-313-1313',
+        email: 'mbrown50@email.com',
+        hospital: 'Massachusetts Medical Group',
+        department: 'Department of Cardiology',
+        physician: 'Dr. Beth Smith',
+        conditions: 'COPD, CHF',
+        nextAppointment: 'Tomorrow 4:45 pm'
+      },
+      {
+        name: 'Amanda Garcia',
+        dob: '01/03/1988',
+        sex: 'Female',
+        residence: 'Lexington, MA',
+        mrn: 'YTK12345687',
+        idNumber: 'NHL12345687',
+        ssn: '1414',
+        phone: '(141)-414-1414',
+        email: 'agarcia88@email.com',
+        hospital: 'Massachusetts Medical Group',
+        department: 'Department of Cardiology',
+        physician: 'Dr. Beth Smith',
+        conditions: 'Diabetes (Type I), Hypertension',
+        nextAppointment: 'Wednesday 8:30 am'
+      },
+      {
+        name: 'Christopher Lee',
+        dob: '06/20/1962',
+        sex: 'Male',
+        residence: 'Concord, MA',
+        mrn: 'YTK12345688',
+        idNumber: 'NHL12345688',
+        ssn: '1515',
+        phone: '(151)-515-1515',
+        email: 'clee62@email.com',
+        hospital: 'Massachusetts Medical Group',
+        department: 'Department of Cardiology',
+        physician: 'Dr. Beth Smith',
+        conditions: 'CHF, COPD',
+        nextAppointment: 'Wednesday 10:15 am'
+      },
+      {
+        name: 'Nicole Anderson',
+        dob: '10/12/1978',
+        sex: 'Female',
+        residence: 'Winchester, MA',
+        mrn: 'YTK12345689',
+        idNumber: 'NHL12345689',
+        ssn: '1616',
+        phone: '(161)-616-1616',
+        email: 'nanderson78@email.com',
+        hospital: 'Massachusetts Medical Group',
+        department: 'Department of Cardiology',
+        physician: 'Dr. Beth Smith',
+        conditions: 'Asthma, Hypertension',
+        nextAppointment: 'Wednesday 1:00 pm'
+      },
+      {
+        name: 'Kevin Taylor',
+        dob: '03/25/1953',
+        sex: 'Male',
+        residence: 'Woburn, MA',
+        mrn: 'YTK12345690',
+        idNumber: 'NHL12345690',
+        ssn: '1717',
+        phone: '(171)-717-1717',
+        email: 'ktaylor53@email.com',
+        hospital: 'Massachusetts Medical Group',
+        department: 'Department of Cardiology',
+        physician: 'Dr. Beth Smith',
+        conditions: 'Diabetes (Type II), CHF',
+        nextAppointment: 'Wednesday 2:30 pm'
+      },
+      {
+        name: 'Rachel White',
+        dob: '12/08/1982',
+        sex: 'Female',
+        residence: 'Burlington, MA',
+        mrn: 'YTK12345691',
+        idNumber: 'NHL12345691',
+        ssn: '1818',
+        phone: '(181)-818-1818',
+        email: 'rwhite82@email.com',
+        hospital: 'Massachusetts Medical Group',
+        department: 'Department of Cardiology',
+        physician: 'Dr. Beth Smith',
+        conditions: 'COPD, Asthma',
+        nextAppointment: 'Wednesday 4:00 pm'
+      },
+      {
+        name: 'Steven Miller',
+        dob: '08/17/1957',
+        sex: 'Male',
+        residence: 'Reading, MA',
+        mrn: 'YTK12345692',
+        idNumber: 'NHL12345692',
+        ssn: '1919',
+        phone: '(191)-919-1919',
+        email: 'smiller57@email.com',
+        hospital: 'Massachusetts Medical Group',
+        department: 'Department of Cardiology',
+        physician: 'Dr. Beth Smith',
+        conditions: 'Hypertension, CHF',
+        nextAppointment: 'Thursday 9:00 am'
       }
     ];
 
@@ -203,6 +427,25 @@ angular.module('patientApp', ['ui.bootstrap'])
           // Check date of birth
           if ($scope.searchForm.dob && patient.dob !== $scope.searchForm.dob) {
             matches = false;
+          }
+
+          // Check appointment range
+          if ($scope.searchForm.startDate || $scope.searchForm.endDate) {
+            var appointmentDate = $scope.parseAppointmentDate(patient.nextAppointment);
+            if (appointmentDate) {
+              if ($scope.searchForm.startDate) {
+                var startDate = new Date($scope.searchForm.startDate);
+                if (appointmentDate < startDate) {
+                  matches = false;
+                }
+              }
+              if ($scope.searchForm.endDate) {
+                var endDate = new Date($scope.searchForm.endDate);
+                if (appointmentDate > endDate) {
+                  matches = false;
+                }
+              }
+            }
           }
 
           return matches;
@@ -308,5 +551,50 @@ angular.module('patientApp', ['ui.bootstrap'])
         
         $scope.advancedSearch[field] = formattedDate;
       }
+    };
+
+    // Parse appointment date string to Date object
+    $scope.parseAppointmentDate = function(appointmentString) {
+      if (!appointmentString) return null;
+      
+      var today = new Date();
+      var tomorrow = new Date(today);
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      
+      // Extract time from appointment string
+      var timeMatch = appointmentString.match(/(\d{1,2}):(\d{2})\s*(am|pm)/i);
+      if (!timeMatch) return null;
+      
+      var hour = parseInt(timeMatch[1]);
+      var minute = parseInt(timeMatch[2]);
+      var period = timeMatch[3].toLowerCase();
+      
+      // Convert to 24-hour format
+      if (period === 'pm' && hour !== 12) {
+        hour += 12;
+      } else if (period === 'am' && hour === 12) {
+        hour = 0;
+      }
+      
+      var appointmentDate = new Date();
+      
+      if (appointmentString.includes('Today')) {
+        appointmentDate = new Date(today);
+      } else if (appointmentString.includes('Tomorrow')) {
+        appointmentDate = new Date(tomorrow);
+      } else if (appointmentString.includes('Wednesday')) {
+        appointmentDate = new Date(today);
+        var daysUntilWednesday = (3 - today.getDay() + 7) % 7;
+        if (daysUntilWednesday === 0) daysUntilWednesday = 7;
+        appointmentDate.setDate(today.getDate() + daysUntilWednesday);
+      } else if (appointmentString.includes('Thursday')) {
+        appointmentDate = new Date(today);
+        var daysUntilThursday = (4 - today.getDay() + 7) % 7;
+        if (daysUntilThursday === 0) daysUntilThursday = 7;
+        appointmentDate.setDate(today.getDate() + daysUntilThursday);
+      }
+      
+      appointmentDate.setHours(hour, minute, 0, 0);
+      return appointmentDate;
     };
   }]);
